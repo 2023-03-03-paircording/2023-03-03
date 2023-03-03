@@ -17,16 +17,49 @@
       root.style.height="30vh";
       root.style.position="absolute";
       root.style.left="10vW";
+    
 
 
-      for(let a=0;i<num;i++){
+      for(let i=0;i<num;i++){
+        
       let position =["-80vw","0","80vw"];
       let makediv = document.createElement('div');
-      root.appendChild(makediv);
+      let makeima = document.createElement('img');
+
+      root.appendChild(makediv).appendChild(makeima);
       root.children[i].style.left=position[i];
+    
     }
+    root.children[0].style.width="100%";
+    root.children[0].style.height="100%";
+    root.children[1].style.width="100%";
+    root.children[1].style.height="100%";
+    root.children[2].style.width="100%";
+    root.children[2].style.height="100%";
+
+    root.children[0].style.position="absolute";
+    root.children[1].style.position="absolute";
+    root.children[2].style.position="absolute";
+
+
+
+    root.children[0].children[0].style.width="100%";
+    root.children[0].children[0].style.height="100%";
+    root.children[1].children[0].style.width="100%";
+    root.children[1].children[0].style.height="100%";
+    root.children[2].children[0].style.width="100%";
+    root.children[2].children[0].style.height="100%";
+
+
+    root.children[0].children[0].style.src=imageArr[0]
+    root.children[1].children[0].style.src=imageArr[1]
+    root.children[2].children[0].style.src=imageArr[2]
+
   }
   makeDiv(3);
+  console.dir(root)
+
+  
 
 
 
