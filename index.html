@@ -9,12 +9,64 @@
 <body>
   <div id="root"></div>
   <script>
+    let root = document.getElementById("root");
+    root.style.position = "relative";
+    root.style.width = "80vw";
+    root.style.height = "30vh";
+    root.style.border = "2px solid black";
+    root.style.margin = "auto";
+    root.style.backgroundColor = "skyblue";
+
+
+
+
     let imageArr = ["https://daejeon.greenart.co.kr/upimage/mainBanner/20221229135412.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20230117150323.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221118121838.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221012181742.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221006183336.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220506154305.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220204173055.jpg"]
     
-    function dot (){
-      
-    }
+    function makeButton(){
+      let div = document.createElement("div");
+      div.style.width = "45px";
+      div.style.height = "45px";
+      div.style.borderRadius = "50%";
+      div.style.backgroundColor = "darkgray";
+      div.style.opacity = "0.5";
+      div.style.position = "absolute";
+      div.style.top = "42%";
+      div.style.cursor = "pointer"
 
+      return div;
+    }
+    let leftButton = makeButton();
+    root.appendChild(leftButton);
+    leftButton.style.left = "35px";
+    let rightButton = makeButton();
+    root.appendChild(rightButton);
+    rightButton.style.right = "35px";
+
+    function makeDot(howmuch){
+      let dotBox = document.createElement("div");
+      dotBox.style.position = "absolute";
+      dotBox.style.display = "flex";
+      dotBox.style.alignItems = "center"
+      dotBox.style.justifyContent = "center"
+      dotBox.style.width = "100%";
+      dotBox.style.height = "12px";
+      dotBox.style.gap = "10px"
+      dotBox.style.bottom = "10px"
+      for(let i = 0; i < howmuch; i ++){
+        let dot = document.createElement("div");
+        dot.style.width = "12px";
+        dot.style.height = "12px";
+        dot.style.borderRadius = "50%";
+        dot.style.backgroundColor = "darkgray";
+        dot.style.opacity = "0.6";
+        dot.style.cursor = "pointer";
+        dotBox.appendChild(dot);
+        
+      };
+      return dotBox;
+    }
+    let dotWarp = makeDot(imageArr.length);
+    root.appendChild(dotWarp)
   </script>
 </body>
 
