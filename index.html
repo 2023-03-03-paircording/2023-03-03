@@ -9,7 +9,9 @@
 <body>
   <div id="root"></div>
   <script>
-    let root = document.getElementById("root");
+    let imageArr = ["https://daejeon.greenart.co.kr/upimage/mainBanner/20221229135412.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20230117150323.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221118121838.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221012181742.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221006183336.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220506154305.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220204173055.jpg"]
+    
+    const root = document.getElementById('root');
     root.style.position = "relative";
     root.style.width = "80vw";
     root.style.height = "30vh";
@@ -18,10 +20,23 @@
     root.style.backgroundColor = "skyblue";
 
 
+    function makeDiv(num){
+      root.style.width="80vw";
+      root.style.height="30vh";
+      root.style.position="absolute";
+      root.style.left="10vW";
 
 
-    let imageArr = ["https://daejeon.greenart.co.kr/upimage/mainBanner/20221229135412.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20230117150323.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221118121838.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221012181742.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20221006183336.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220506154305.jpg","https://daejeon.greenart.co.kr/upimage/mainBanner/20220204173055.jpg"]
-    
+      for(let i=0;i<num;i++){
+      let position =["-80vw","0","80vw"];
+      let makediv = document.createElement('div');
+      root.appendChild(makediv);
+      root.children[i].style.left=position[i];
+      }
+    }
+    makeDiv(3);
+
+
     function makeButton(){
       let div = document.createElement("div");
       div.style.width = "45px";
